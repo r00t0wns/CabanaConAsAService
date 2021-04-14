@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>313dd428-ccae-47f5-8ca7-dde15383ad76</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/4ba4fa4d-d4e1-48a7-a863-94931a459bbe/resourcegroups/sdm-caas-rg/providers/Microsoft.Insights/components/CabanaConAsAServiceApi-AI</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>

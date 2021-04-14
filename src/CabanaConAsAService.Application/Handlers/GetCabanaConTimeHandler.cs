@@ -10,16 +10,28 @@ namespace CabanaConAsAService.Application.Handlers
     public class GetCabanaConTimeHandler : IRequestHandler<IsItCabanaConTimeYetQuery, IsItCabanaConTimeYetResponse>
     {
         private readonly LocalDateTime _cabanaDateTime =
-            new ZonedDateTime(SystemClock.Instance.GetCurrentInstant(),
-                DateTimeZoneProviders.Tzdb["America/Los_Angeles"]).WithZone(DateTimeZone.Utc).LocalDateTime;
+            new(2020, 08, 05, 0, 0, 0);
 
         public Task<IsItCabanaConTimeYetResponse> Handle(IsItCabanaConTimeYetQuery request,
             CancellationToken cancellationToken)
         {
             var currentTime = request.CurrentTime;
-            var timeLeft = Period.Between(currentTime, _cabanaDateTime);
+            var timeLeft = Period.Between(_cabanaDateTime, currentTime);
 
-            var response = new IsItCabanaConTimeYetResponse {IsItCabanaConTimeYet = timeLeft.Ticks <= 0};
+            var response = new IsItCabanaConTimeYetResponse
+            {
+                IsItCabanaConTimeYet = timeLeft.Ticks <= 0,
+                TimeLeft = new TimeLeft
+                {
+                    Years = timeLeft.Years,
+                    Months = timeLeft.Months,
+                    Days = timeLeft.Days,
+                    Hours = (int)timeLeft.Hours,
+                    Minutes = (int)timeLeft.Minutes,
+                    Seconds = (int)timeLeft.Seconds
+                }
+                
+            };
 
             return Task.FromResult(response);
         }
