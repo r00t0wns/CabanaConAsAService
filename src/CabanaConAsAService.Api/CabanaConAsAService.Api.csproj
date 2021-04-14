@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Ordering.Application\Ordering.Application.csproj" />
+    <ProjectReference Include="..\CabanaConAsAService.Application\CabanaConAsAService.Application.csproj" />
   </ItemGroup>
 
 </Project>

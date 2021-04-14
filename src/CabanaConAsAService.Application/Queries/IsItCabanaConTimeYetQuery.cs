@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using NodaTime;
-using Ordering.Application.Responses;
+using CabanaConAsAService.Application.Responses;
 
-namespace Ordering.Application.Queries
+namespace CabanaConAsAService.Application.Queries
 {
     public class IsItCabanaConTimeYetQuery : IRequest<IsItCabanaConTimeYetResponse>
     {

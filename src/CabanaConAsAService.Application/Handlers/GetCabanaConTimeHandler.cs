@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using MediatR;
 using NodaTime;
-using Ordering.Application.Queries;
-using Ordering.Application.Responses;
+using CabanaConAsAService.Application.Queries;
+using CabanaConAsAService.Application.Responses;
 
-namespace Ordering.Application.Handlers
+namespace CabanaConAsAService.Application.Handlers
 {
     public class GetCabanaConTimeHandler : IRequestHandler<IsItCabanaConTimeYetQuery, IsItCabanaConTimeYetResponse>
     {

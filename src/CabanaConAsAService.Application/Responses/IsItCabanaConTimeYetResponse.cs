@@ -1,4 +1,4 @@
-﻿namespace Ordering.Application.Responses
+﻿namespace CabanaConAsAService.Application.Responses
 {
     public class IsItCabanaConTimeYetResponse
     {

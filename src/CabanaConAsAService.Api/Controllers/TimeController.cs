@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NodaTime;
-using Ordering.Application.Queries;
+using CabanaConAsAService.Application.Queries;
 
 namespace CabanaConAsAService.Api.Controllers
 {
