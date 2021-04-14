@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NodaTime;
 using CabanaConAsAService.Application.Queries;
+using CabanaConAsAService.Application.Responses;
 
 namespace CabanaConAsAService.Api.Controllers
 {
@@ -19,7 +20,7 @@ namespace CabanaConAsAService.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IsItCabanaTimeYetResponse>> IsItCabanaConTimeYet()
+        public async Task<ActionResult<IsItCabanaConTimeYetResponse>> IsItCabanaConTimeYet()
         {
             var query = new IsItCabanaConTimeYetQuery(LocalDateTime.FromDateTime(DateTime.Now));
             var response = await _mediator.Send(query);
