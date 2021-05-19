@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using NodaTime;
@@ -10,13 +10,13 @@ namespace CabanaConAsAService.Application.Handlers
     public class GetCabanaConTimeHandler : IRequestHandler<IsItCabanaConTimeYetQuery, IsItCabanaConTimeYetResponse>
     {
         private readonly LocalDateTime _cabanaDateTime =
-            new(2020, 08, 05, 0, 0, 0);
+            new(2021, 08, 05, 0, 0, 0);
 
         public Task<IsItCabanaConTimeYetResponse> Handle(IsItCabanaConTimeYetQuery request,
             CancellationToken cancellationToken)
         {
             var currentTime = request.CurrentTime;
-            var timeLeft = Period.Between(_cabanaDateTime, currentTime);
+            var timeLeft = Period.Between(currentTime, _cabanaDateTime);
 
             var response = new IsItCabanaConTimeYetResponse
             {
